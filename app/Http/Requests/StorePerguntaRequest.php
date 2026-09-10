@@ -23,7 +23,8 @@ class StorePerguntaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // TODO (Dev Jr): Adicione as regras de validação para o Ticket #001
+            //"evento_id" => [ "required", "exists:eventos,id" ],
+            "texto"     => [ "required", "min:10", "max:255" ],
         ];
     }
 }
