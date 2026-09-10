@@ -29,7 +29,7 @@ class EventoController extends Controller
 
         // ⚠ BUG LEGADO: Carrega TODOS os registros da tabela no PHP
         
-        $perguntas = Pergunta::where( "evento_id", $id )->orderBy( "created_at", "desc" )->paginate( 10 );
+        $perguntas = Pergunta::where( "evento_id", $id )->with( 'user' )->orderBy( "created_at", "desc" )->paginate( 10 );
 
         //$perguntas = Pergunta::all();
 

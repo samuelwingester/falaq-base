@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+use App\Models\User;
+
 class Pergunta extends Model
 {
     use HasFactory;
@@ -15,5 +17,10 @@ class Pergunta extends Model
     public function evento(): BelongsTo
     {
         return $this->belongsTo(Evento::class);
+    }
+
+    public function user() : BelongsTo
+    {
+        return $this->belongsTo( User::class );
     }
 }

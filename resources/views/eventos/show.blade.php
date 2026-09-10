@@ -41,6 +41,7 @@
                     <p class="fs-5 mb-2 text-white">{{ $pergunta->texto }}</p>
                     <div class="d-flex justify-content-between align-items-center text-secondary small">
                         <span>Status: <span class="badge bg-success">{{ $pergunta->status }}</span></span>
+                        <span>Nome: {{ $pergunta->user->name ?? 'Anônimo' }} </span>
                         <span>{{ $pergunta->created_at->format('d/m/Y H:i') }}</span>
                     </div>
                 </div>
@@ -54,7 +55,7 @@
         <!-- TICKET #002: Renderização dos Botões de Paginação -->
         @if(method_exists($perguntas, 'links'))
             <div class="d-flex justify-content-center mt-4">
-                
+                {{ $perguntas->links() }}
             </div>
         @endif
     </div>
